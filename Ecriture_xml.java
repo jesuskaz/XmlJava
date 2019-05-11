@@ -21,18 +21,18 @@ import org.w3c.dom.Element;
              DocumentBuilder docBuilder = dbFactory.newDocumentBuilder();
              //Element racine
              Document doc = docBuilder.newDocument();
-             Element racine = doc.createElement("repertoire");
-             doc.appendChild(racine);
+             Element repertoire = doc.createElement("repertoire");
+             doc.appendChild(repertoire);
              //Element contact
              Element contact = doc.createElement("contact");
-             racine.appendChild(contact);
+             repertoire.appendChild(contact);
              //Attribut de l'element contact
              Attr attr = doc.createAttribute("id");
              attr.setValue("1");
              contact.setAttributeNode(attr);
              //Le nom
              Element nom = doc.createElement("nom");
-             nom.appendChild(doc.createTextNode("codeur"));
+             nom.appendChild(doc.createTextNode("King"));
              contact.appendChild(nom);
              //Prenom
              Element prenom = doc.createElement("prenom");
@@ -40,7 +40,7 @@ import org.w3c.dom.Element;
              contact.appendChild(prenom);
              //Mobile
              Element mobile = doc.createElement("mobile");
-             mobile.appendChild(doc.createTextNode("03202302302"));
+             mobile.appendChild(doc.createTextNode("343434343"));
              contact.appendChild(mobile);
              //Email
              Element email = doc.createElement("email");
