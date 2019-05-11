@@ -23,7 +23,13 @@ import org.w3c.dom.Element;
             Document doc = docBuilder.newDocument();
             Element rootElement = doc.createElement("nameOfracine");
             doc.appendChild(rootElement);
-            
+            //name
+            Element name = doc.createElement("name");
+            rootElement.appendChild(name);
+            //fistName
+            Element firstName = doc.createElement("firstName");
+            rootElement.appendChild(firstName);
+            //etc.....
             //Creation of an attribute
             Attr attr = doc.createAttribute("nameOfAttribute");
             rootElement.setValue(attr);
