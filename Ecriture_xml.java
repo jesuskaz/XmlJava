@@ -21,19 +21,49 @@ import org.w3c.dom.Element;
             DocumentBuilder docBuilder = dbFactory.newDocumentBuilder();
             //Element racine
             Document doc = docBuilder.newDocument();
-            Element rootElement = doc.createElement("nameOfracine");
+            Element rootElement = doc.createElement("table");
             doc.appendChild(rootElement);
+             //The container
+            Element identite = doc.createElement("Identite");
+            rootElement.appendChild(identite);
             //name
-            Element name = doc.createElement("name");
-            rootElement.appendChild(name);
-            //fistName
-            Element firstName = doc.createElement("firstName");
-            rootElement.appendChild(firstName);
+            Element nom = doc.createElement("nom");
+            rootElement.appendChild(nom);
+            //postNom
+            Element postnom = doc.createElement("postnom");
+            rootElement.appendChild(postnom);
+            //prenom
+            Element prenom = doc.createElement("prenom");
+            rootElement.appendChild(prenom);
+            //adresse
+            Element adresse = doc.createElement("adresse");
+            rootElement.appendChild(adresse);
+            //date de naissance
+            Element date = doc.createElement("dateNaissance");
+            rootElement.appendChild(date);
+            //promotion
+            Element promotion = doc.createElement("promotion");
+            rootElement.appendChild(promotion);
             //etc.....
-            //Creation of an attribute
-            Attr attr = doc.createAttribute("nameOfAttribute");
-            rootElement.setValue(attr);
-             //Ecriture de contenue dans le fichier xml
+            //Creation of an attribute of name
+            Attr attr = doc.createAttribute("id");
+            attr.setValue("001");
+            nom.setAttributeNode(attr);
+            //The value of the element
+            nom.appendChild(doc.createTextNode("Kazembe"));
+            postnom.appendChild(doc.createTextNode("Kidinda"));
+            prenom.appendChild(doc.createTextNode("Jesus"));
+            adresse.appendChild(doc.createTextNode("1245,Makomeno"));
+            date.appendChild(doc.createTextNode("21"));
+            promotion.appendChild(doc.createTextNode("G3 SI"));
+
+            identite.appendChild(nom);
+            identite.appendChild(postnom);
+            identite.appendChild(prenom);
+            identite.appendChild(adresse);
+            identite.appendChild(date);
+            identite.appendChild(promotion);
+            //Ecriture de contenue dans le fichier xml
              TransformerFactory transformerFactory = TransformerFactory.newInstance();
              Transformer transformer = transformerFactory.newTransformer();
              DOMSource source = new DOMSource(doc);
