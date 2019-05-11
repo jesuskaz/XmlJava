@@ -17,35 +17,16 @@ import org.w3c.dom.Element;
      {
          try
          {
-             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-             DocumentBuilder docBuilder = dbFactory.newDocumentBuilder();
-             //Element racine
-             Document doc = docBuilder.newDocument();
-             Element repertoire = doc.createElement("repertoire");
-             doc.appendChild(repertoire);
-             //Element contact
-             Element contact = doc.createElement("contact");
-             repertoire.appendChild(contact);
-             //Attribut de l'element contact
-             Attr attr = doc.createAttribute("id");
-             attr.setValue("1");
-             contact.setAttributeNode(attr);
-             //Le nom
-             Element nom = doc.createElement("nom");
-             nom.appendChild(doc.createTextNode("King"));
-             contact.appendChild(nom);
-             //Prenom
-             Element prenom = doc.createElement("prenom");
-             prenom.appendChild(doc.createTextNode("java"));
-             contact.appendChild(prenom);
-             //Mobile
-             Element mobile = doc.createElement("mobile");
-             mobile.appendChild(doc.createTextNode("343434343"));
-             contact.appendChild(mobile);
-             //Email
-             Element email = doc.createElement("email");
-             email.appendChild(doc.createTextNode("code@gmail.com"));
-             contact.appendChild(email);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = dbFactory.newDocumentBuilder();
+            //Element racine
+            Document doc = docBuilder.newDocument();
+            Element rootElement = doc.createElement("nameOfracine");
+            doc.appendChild(rootElement);
+            
+            //Creation of an attribute
+            Attr attr = doc.createAttribute("nameOfAttribute");
+            rootElement.setValue(attr);
              //Ecriture de contenue dans le fichier xml
              TransformerFactory transformerFactory = TransformerFactory.newInstance();
              Transformer transformer = transformerFactory.newTransformer();
